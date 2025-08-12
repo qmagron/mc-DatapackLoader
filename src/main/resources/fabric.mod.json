@@ -1,0 +1,36 @@
+{
+	"schemaVersion": 1,
+	"id": "dploader",
+	"version": "${version}",
+	"name": "Datapack Loader",
+	"description": "Allow loading data packs when creating a new world.",
+	"authors": [
+		"White1Hun"
+	],
+	"license": "MIT",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"dploader.DatapackLoader"
+		],
+		"client": [
+			"dploader.DatapackLoaderClient"
+		]
+	},
+	"mixins": [
+		"dploader.mixins.json",
+		{
+			"config": "dploader.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.17.2",
+		"minecraft": ">=1.21 <1.22",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
